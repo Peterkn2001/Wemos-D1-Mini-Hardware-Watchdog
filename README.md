@@ -35,7 +35,8 @@ LED in SMT 0805 package | 1
 
 ### Notes
 D1 mini boards are shipped with a varietry of differnet 0.1" pins and sockets that can be used to suit the application.
-This ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+These same connectors can be used with the hardware watchdog board, to allow it to be stacked above or velow the Wemos,
+or plugged directly into one of the sockest on a Wemos double or triple board
 
 ### Reducing the component count
 The LED and associated 1k resistor are primarily there to indicate to the user that a hearbeat signal has been recieved from the Wemos.
@@ -52,7 +53,7 @@ These photos show the correct orientaion, and correct position of Pin 1 for the 
 ![SOP-8 Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/SOP-8.jpg)
 
 Note that if the processor is fitted upside down (the dot on the package doesnt orientate with the corerspondiong white dot on the board)
-then voltage regulator on the Wemos board will be burnt-out.
+then voltage regulator on the Wemos board will be fried.
 It's especially easy to do ths when uisng a socketed 8-pin DIL package and the ATtiny is re-inserted in the wrong orientation after re-flashing
 (trust me, I've done this more than once!).
 
