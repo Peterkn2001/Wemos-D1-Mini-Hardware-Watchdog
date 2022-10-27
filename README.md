@@ -44,4 +44,9 @@ The LED on the watchdog board is also used to indicate when the watchdog is in i
 I'd reccomend having this LED, and its assciated 1k resistor, in place when you first start experimenting with the hardware watchdog.
 However, once you've become familiar with using the hardware watchdog the LED and 1k resistor can safely be omitted if required.
 
+## Mounting the ATtiny85 processor
+
+![PCB Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/8-pin_DIL.jpg)
+![PCB Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/SOP-8.jpg)
+
 
