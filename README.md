@@ -47,8 +47,6 @@ However, once you've become familiar with using the hardware watchdog the LED an
 ## Mounting the ATtiny85 processor
 
 ![DIL](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/8-pin_DIL.jpg)
-
-
 ![SOP-8 Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/SOP-8.jpg)
 
 
