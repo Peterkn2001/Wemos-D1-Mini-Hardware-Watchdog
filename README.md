@@ -60,6 +60,7 @@ It's especially easy to do this when using a socketed 8-pin DIL package and the 
 ## Component orientation
 The LED (if fitted) and Schottky Diode need to be orientaed correctly.
 The location for the LED has a "+" on the board to indicate the anode. Most LEDs are marked with a green line on the cathode (negative) end of the component.
+
 The Schottky Diode position on the board is marked D1 and has a vertical line on the PCB, indicating the cathode side of the diode, The diode will also have a vertical line on one side which also indicates the cathode, like in the image below (the code printed on your diode may be differnet)...
 
 ![Schottky Diode](https://github.com/Peterkn2001/ATtiny-Programmer/blob/main/images/Schottky_Diode.jpg)
