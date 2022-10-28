@@ -59,3 +59,9 @@ It's especially easy to do ths when uisng a socketed 8-pin DIL package and the A
 
 
 
+# Links to associated projects
+
+ATtiny Programmer, to allow you to flash your code to the ATtiny85:
+https://github.com/Peterkn2001/ATtiny-Programmer
+
+Hardware watchdog in ESP32 DevKitC V4 form-factor:
