@@ -16,7 +16,7 @@ JLCPCB and PCBWay
 
 ## Images
 ![PCB Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/Watchdog_PCB_v1.5_Front.jpg)
-![Completed PCB](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/Watchdog_PCB_v1.5_Back.jpg)
+
 
 ## Bill of Materials
 
