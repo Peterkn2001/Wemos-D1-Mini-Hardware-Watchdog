@@ -57,7 +57,7 @@ then **the voltage regulator on the Wemos board will be fried**.
 It's especially easy to do this when using a socketed 8-pin DIL package and the ATtiny is re-inserted in the wrong orientation after re-flashing 
 (trust me, I've done this more than once!).
 
-## Component orientation
+## Orientation of other components
 The LED (if fitted) and Schottky Diode need to be orientaed correctly.
 The location for the LED has a "+" on the board to indicate the anode. Most LEDs are marked with a green line on the cathode (negative) end of the component.
 
