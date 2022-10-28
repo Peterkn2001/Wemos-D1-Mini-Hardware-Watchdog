@@ -5,7 +5,7 @@ An ATtiny85 based hardware watchdog in the Wemos D1 Mini/Pro form factor, able t
 This watchdog timer listens for a heartbeat signal from the Wemos D1 Mini/Pro and if no signal has been recieved during the 
 pre-defined period the Wemos will be rebooted (along with the watchdig timer).
 The ATtiny firmware allows for separate startup and heartbeet delays to be defined and, in conjunction with the custom PCB, allows
-these to be adjusted via solder bridges to cater for differnet use-cases without the need to re-flash the ATtiny firmware.
+these to be adjusted via solder bridges to cater for differnet applications without the need to re-flash the ATtiny firmware.
 
 The custom circuit board also allows the pin that is used to listen for the hearbeat signal to be selected via a solder bridge.
 
@@ -52,8 +52,8 @@ These photos show the correct orientaion, and correct position of Pin 1 for the 
 ![DIL](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/8-pin_DIL.jpg)
 ![SOP-8 Front](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/SOP-8.jpg)
 
-Note that if the processor is fitted upside down (the dot on the package doesnt orientate with the corerspondiong white dot on the board)
-then voltage regulator on the Wemos board will be fried.
+Note that **if the processor is fitted upside down** (the dot on the package doesn't orientate with the corresponding white dot on the board)
+then **the voltage regulator on the Wemos board will be fried**.
 It's especially easy to do ths when uisng a socketed 8-pin DIL package and the ATtiny is re-inserted in the wrong orientation after re-flashing
 (trust me, I've done this more than once!).
 
