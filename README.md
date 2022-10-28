@@ -35,8 +35,8 @@ LED in SMT 0805 package | 1
 
 ### Notes
 D1 mini boards are shipped with a varietry of differnet 0.1" pins and sockets that can be used to suit the application.
-These same connectors can be used with the hardware watchdog board, to allow it to be stacked above or velow the Wemos,
-or plugged directly into one of the sockest on a Wemos double or triple board
+These same connectors can be used with the hardware watchdog board, to allow it to be stacked above or below the Wemos,
+or plugged directly into one of the sockets on a Wemos double or triple base
 
 ### Reducing the component count
 The LED and associated 1k resistor are primarily there to indicate to the user that a hearbeat signal has been recieved from the Wemos.
