@@ -23,9 +23,9 @@ JLCPCB and PCBWay
 ### Bill of Materials for ATTiny Programmer V1.0
 
 Description | Quantity
------------- | -------------
+:--- | :---:
 ATtiny85 in either 8-pin DIL or SOP-8 package | 1
-8-pin DIL socket if the 8-pin DIL package is used (Optional ) | 1
+8-pin DIL socket if the 8-pin DIL package is used (Optional) | 1
 LED in SMT 0805 package | 1
 1k resistor in SMT 0805 package | 1
 10k resistor in SMT 0805 package | 1
