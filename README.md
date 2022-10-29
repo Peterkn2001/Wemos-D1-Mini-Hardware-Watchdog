@@ -2,7 +2,7 @@
 An ATtiny85 based hardware watchdog in the Wemos D1 Mini/Pro form factor, able to be used as a shield for the Wemos boards. 
 
 ## Overview
-This watchdog timer listens for a heartbeat signal from the Wemos D1 Mini/Pro and if no signal has been recieved during the 
+This watchdog timer listens for a heartbeat signal from the Wemos D1 Mini/Pro and if no signal has been received during the 
 pre-defined period the Wemos will be rebooted (along with the watchdog timer).
 The ATtiny firmware allows for separate start-up and heartbeat delays to be defined and, in conjunction with the custom PCB, allows
 these to be adjusted via solder bridges to cater for different applications without the need to re-flash the ATtiny firmware.
@@ -60,45 +60,46 @@ It's especially easy to do this when using a socketed 8-pin DIL package and the 
 (trust me, I've done this more than once!).
 
 ## Orientation of other components
-The LED (if fitted) and Schottky Diode need to be orientaed correctly.
+The LED (if fitted) and Schottky Diode need to be orientated correctly.
 The location for the LED has a "+" on the board to indicate the anode. Most LEDs are marked with a green line on the cathode (negative) end of the component.
 
-The Schottky Diode position on the board is marked D1 and has a vertical line on the PCB, indicating the cathode side of the diode, The diode will also have a vertical line on one side which also indicates the cathode, like in the image below (the code printed on your diode may be differnet)...
+The Schottky Diode position on the board is marked D1 and has a vertical line on the PCB, indicating the cathode side of the diode, The diode will also have a vertical line on one side which also indicates the cathode, like in the image below (the code printed on your diode may be different)...
 
 ![Schottky Diode](https://github.com/Peterkn2001/ATtiny-Programmer/blob/main/images/Schottky_Diode.jpg)
+
 
 # The ATtiny Firmware
 The firmware for the ATtiny85 is here:
 
 https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/ATtiny-Firmware/Hardware_Watchdog_v1_5.ino
 
-The firmware allows two values to be defined for both the initial (startup) delay and the hearbeat timeout.
+The firmware allows two values to be defined for both the initial (start-up) delay and the heartbeat timeout.
 
-When the device first boots, the onboard LED of the hardware watchdog (if fitted) will be lit, and will go off when the intial delay has ended.
-The hardware watchdog then listens for a regular hearbeat signal from the Wemos to confirm that the Wemos is still operating correctly.
-If no heartbeat signal is recieved before the heartbeat timeout delay period ends then the device will reboot the Wemos (and the hardware watchdog).
+When the device first boots, the onboard LED of the hardware watchdog (if fitted) will be lit, and will go off when the initial delay has ended.
+The hardware watchdog then listens for a regular heartbeat signal from the Wemos to confirm that the Wemos is still operating correctly.
+If no heartbeat signal is received before the heartbeat timeout delay period ends then the device will reboot the Wemos (and the hardware watchdog).
 
-The initial startup delay is to allow the Wemos to perform all of the void startup actions (initialising sensors, connecting to WiFi etc)
+The initial start-up delay is to allow the Wemos to perform all of the void start-up actions (initialising sensors, connecting to WiFi etc)
 before the void loop executes. The void loop needs to trigger a heartbeat signal to the selected GPIO pin (preferably using a non-blocking timer such as SimpleTimer)
 to prevent the hardware watchdog from rebooting the Wemos and staring the process over again.
 
-The first reboot would occur once both the inital startup delay and the heartbeat delay have expired.
+The first reboot would occur once both the initial start-up delay and the heartbeat delay have expired.
 
-To avoid having to re-flash the ATtiny86 processor with differnet firmware for different situations, the firmware allows two differnet starup and heratbeat
-intervals to be defined, which can be selected by applying a solder bridge to the relevant pads on the PCB. This is all explained in the commenst of the ATtiny code.
+To avoid having to re-flash the ATtiny86 processor with different firmware for different situations, the firmware allows two different start up and heartbeat
+intervals to be defined, which can be selected by applying a solder bridge to the relevant pads on the PCB. This is all explained in the comments of the ATtiny code.
 
 You will need additional hardware to be able to flash the AYtiny85 processor.
 Some of the hardware sold for this purpose on the internet isn't actually suitable for this task, and the best solutions use an Arduino Uno or Nano.
-As wiring-up and programming an Arduino for thios task each time you want to re-flash an ATtiny is messy and time-consuming I designed and built my own solution.
+As wiring-up and programming an Arduino for this task each time you want to re-flash an ATtiny is messy and time-consuming I designed and built my own solution.
 See the "Links to associated projects" section below for further details.
 
-**Note that it is important to selct the correct processor type and clock frequency (8 MHz), and to burn the bootloader before uploading the firmware.
-If the initial startup and heratbeat timing is much longer or shorter than expected then the wrong clock frequency has probably been used.**
+**Note that it is important to select the correct processor type and clock frequency (8 MHz), and to burn the bootloader before uploading the firmware.
+If the initial start-up and heartbeat timing is much longer or shorter than expected, then the wrong clock frequency has probably been used.**
 
 # Selecting the Heartbeat Pin
 
 Only one of the five pairs of heartbeat solder pads should be bridged
-(but if no pads are bridged then the the watchdog will constantly reboot once the startub and heartbead delay periods have passed)
+(but if no pads are bridged then the watchdog will constantly reboot once the start-up and heartbeat delay periods have passed)
 
 ![Hearbeat_Solder_Pads](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/Heartbeat_solder_pads.jpg)
 
@@ -110,27 +111,27 @@ The sketch located here:
 
 https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_simple_Hardware_Watchdog_example.ino
 
-illustrates how to use simpleTimer to call a function which sends a heartbeat to the hardware watchdog.
+illustrates how to use SimpleTimer to call a function which sends a heartbeat to the hardware watchdog.
 
-The following sketch - which should only be used for testing purposes - increases the delay between heatbeats so that the hardware watchdog will
+The following sketch - which should only be used for testing purposes - increases the delay between heartbeats so that the hardware watchdog will
 eventually force a reset:
 
 https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_force_Hardware_Watchdog_timeout_reset_example.ino
 
 # Using Arduino OTA with the hardware watchdog
 If Arduino OTA is used to perform Over The Air updates to a Wemos D1 Mini/Pro that uses the hardware watchdog then there is the
-potential for the hardware watchdog to reboot the Wemos during an OTA update, because the Wemos has stopped sending hearbeat pulses to the watchdog
-while it is performing the OTA process. This would most likley result in the Wemos requiring the code to be re-flashed via the physical USB port.
+potential for the hardware watchdog to reboot the Wemos during an OTA update, because the Wemos has stopped sending heartbeat pulses to the watchdog
+while it is performing the OTA process. This would most likely result in the Wemos requiring the code to be re-flashed via the physical USB port.
 
-There is a simple solution to this, which is to force the OTA process to send a heartbeat pulse to the hardware watchdog whne the OTA process begins,
+There is a simple solution to this, which is to force the OTA process to send a heartbeat pulse to the hardware watchdog when the OTA process begins,
 the to continue to feed the SimpleTimer object during the OTA process, by executing 'timer.run();` throughout the process.
 
-This is achieved by adding these lines of code to `void ssetup()` :
+This is achieved by adding these lines of code to `void setup()` :
 
 ```cpp
   ArduinoOTA.onStart([]() {
   send_heartbeat(); 
-  }); //Send a heartneat pulse when the OTA update process starts, to avoid a timeout
+  }); //Send a heartbeat pulse when the OTA update process starts, to avoid a timeout
   
   ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
   Serial.printf("Progress: %u%%\r", (progress / (total / 100))); timer.run();
