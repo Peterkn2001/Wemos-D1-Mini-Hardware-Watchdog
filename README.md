@@ -65,6 +65,37 @@ The Schottky Diode position on the board is marked D1 and has a vertical line on
 
 ![Schottky Diode](https://github.com/Peterkn2001/ATtiny-Programmer/blob/main/images/Schottky_Diode.jpg)
 
+The ATtiny Firmware
+The firmware for the ATtiny85 is here:
+
+https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/ATtiny-Firmware/Hardware_Watchdog_v1_5.ino
+
+The firmware allows two values to be defined for both the initial (startup) delay and the hearbeat timeout.
+
+When the device first boots, the onboard LED of the hardware watchdog (if fitted) will be lit, and will go off when the intial delay has ended.
+The hardware watchdog then listens for a regular hearbeat signal from the Wemos to confirm that the Wemos is still operating correctly.
+If no heartbeat signal is recieved before the heartbeat timeout delay period ends then the device will reboot the Wemos (and the hardware watchdog).
+
+The initial startup delay is to allow the Wemos to perform all of the void startup actions (initialising sensors, connecting to WiFi etc)
+before the void loop executes. The void loop needs to trigger a heartbeat signal to the selected GPIO pin (preferably using a non-blocking timer such as SimpleTimer)
+to prevent the hardware watchdog from rebooting the Wemos and staring the process over again.
+
+The first reboot would occur once both the inital startup delay and the heartbeat delay have expired.
+
+To avoid having to re-flash the ATtiny86 processor with differnet firmware for different situations, the firmware allows two differnet starup and heratbeat
+intervals to be defined, which can be selected by applying a solder bridge to the relevant pads on the PCB. This is all explained in the commenst of the ATtiny code.
+
+You will need additional hardware to be able to flash the AYtiny85 processor.
+Some of the hardware sold for this purpose on the internet isn't actually suitable for this task, and the best solutions use an Arduino Uno or Nano.
+As wiring-up and programming an Arduino for thios task each time you want to re-flash an ATtiny is messy and time-consuming I designed and built my own solution.
+See the "Links to associated projects" section below for further details.
+
+# Selecting the Heartbeat Pin
+
+
+
+
+
 # Links to associated projects
 
 ATtiny Programmer, to allow you to flash your code to the ATtiny85:
