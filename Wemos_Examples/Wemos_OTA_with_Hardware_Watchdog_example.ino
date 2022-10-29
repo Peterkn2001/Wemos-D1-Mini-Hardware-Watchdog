@@ -1,4 +1,4 @@
-// Sketch to demonstrate how to configure OTA settings whne using the Hardware Watchdog
+// Sketch to demonstrate how to configure OTA settings when using the Hardware Watchdog
 // to prevent the watchdog rebooting the Wemos part way through the OTA update process.
 
 #include <ESP8266WiFi.h>
@@ -65,7 +65,7 @@ void setup()
 
   ArduinoOTA.onStart([]() {
   send_heartbeat(); 
-  }); //Send a heartneat pulse when the OTA update process starts, to avoid a timeout
+  }); //Send a heartbeat pulse when the OTA update process starts, to avoid a timeout
   
   ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
   Serial.printf("Progress: %u%%\r", (progress / (total / 100))); timer.run();
