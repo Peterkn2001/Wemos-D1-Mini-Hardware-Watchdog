@@ -13,7 +13,7 @@ void setup()
   Serial.begin(74880);
   
   pinMode(heartbeat_pin, OUTPUT);   // Set Hardware watchdog jumper to match this
-  pinMode(wemos_led_pin, OUTPUT);   // Wemos builtin LED - active LOW
+  pinMode(wemos_led_pin, OUTPUT);   // Wemos built in LED - active LOW
   digitalWrite(wemos_led_pin,HIGH); // Turn Wemos built-in LED off
 
   timer.setInterval(5000, send_heartbeat);
