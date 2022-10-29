@@ -119,8 +119,8 @@ https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_E
 
 illustrates how to use SimpleTimer to call a function which sends a heartbeat to the hardware watchdog.
 
-The following sketch - which should only be used for testing purposes - increases the delay between heartbeats so that the hardware watchdog will
-eventually force a reset:
+The following sketch - which should only be used for testing purposes - gradually increases the delay between heartbeats so that the 
+hardware watchdog will eventually force a reset:
 
 https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_force_Hardware_Watchdog_timeout_reset_example.ino
 
@@ -158,4 +158,4 @@ https://github.com/Peterkn2001/ATtiny-Programmer
 
 Hardware watchdog in ESP32 DevKitC V4 form-factor:
 
-(Awaiting URL)
+(*Awaiting URL*)
