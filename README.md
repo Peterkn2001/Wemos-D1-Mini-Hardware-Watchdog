@@ -108,13 +108,14 @@ No changes to the ATTiny firmware are needed when selecting the heartbeat pin, i
 
 The sketch located here:
 
+https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_simple_Hardware_Watchdog_example.ino
 
 illustrates how to use simpleTimer to call a function which sends a heartbeat to the hardware watchdog.
 
 The following sketch - which should only be used for testing purposes - increases the delay between heatbeats so that the hardware watchdog will
 eventually force a reset:
 
-
+https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_force_Hardware_Watchdog_timeout_reset_example.ino
 
 # Using Arduino OTA with the hardware watchdog
 If Arduino OTA is used to perform Over The Air updates to a Wemos D1 Mini/Pro that uses the hardware watchdog then there is the
@@ -136,7 +137,9 @@ This is achieved by adding these lines of code to `void ssetup()` :
   }); // Run timer during the OTA process to avoid heartbeat timeout
 ```  
 
+A full example sketch is available here:
 
+https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Wemos_Examples/Wemos_OTA_with_Hardware_Watchdog_example.ino
 
 
 # Links to associated projects
