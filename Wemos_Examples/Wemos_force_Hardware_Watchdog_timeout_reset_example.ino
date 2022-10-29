@@ -1,8 +1,8 @@
 // This example is intended to test the Hardware Watchdog functionality by increasing the
-// time at which heartneat pulses are sent to the watchdog until the watchdog times-out and reboots the Wemos.
+// time at which heartbeat pulses are sent to the watchdog until the watchdog times-out and reboots the Wemos.
 // Not intended for use as a real-world sketch.
-// Use of blocking delays in the void loop is not reccomended. See other examples which use SimpleTimer
-// to trigger the hearbeat pulses.
+// Use of blocking delays in the void loop is not recommended. See other examples which use SimpleTimer
+// to trigger the heartbeat pulses.
 
 #define heartbeat_pin 14 // Pin D5 - should match the solder bridge on the hardware watchdog
 #define wemos_led_pin  2 // Built-in LED on Wemos attached to GPIO2 (Pin D4)
@@ -13,7 +13,7 @@ void setup()
 {
   Serial.begin(74880);
   pinMode(heartbeat_pin, OUTPUT);   // Set Hardware watchdog jumper to match this
-  pinMode(wemos_led_pin, OUTPUT);   // Wemos builtin LED - active LOW
+  pinMode(wemos_led_pin, OUTPUT);   // Wemos built in LED - active LOW
   digitalWrite(wemos_led_pin,HIGH); // Turn Wemos built-in LED off
 }
 
