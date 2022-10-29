@@ -104,7 +104,7 @@ If the initial start-up and heartbeat timing is much longer or shorter than expe
 
 # Selecting the Heartbeat Pin
 
-Only one of the five pairs of heartbeat solder pads should be bridged
+**Only one** of the five pairs of heartbeat solder pads should be bridged
 (but if no pads are bridged then the watchdog will constantly reboot once the start-up and heartbeat delay periods have passed)
 
 ![Hearbeat_Solder_Pads](https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/images/Heartbeat_solder_pads.jpg)
