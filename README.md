@@ -67,6 +67,12 @@ The Schottky Diode position on the board is marked D1 and has a vertical line on
 
 ![Schottky Diode](https://github.com/Peterkn2001/ATtiny-Programmer/blob/main/images/Schottky_Diode.jpg)
 
+## Gerber File
+The Gerber file can be downloaded here:
+
+https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/Gerber/Gerber_Hardware_Watchdog_v1_5.zip
+
+Note that this is a .zip file and does not need to be un-zipped. Simply upload it to your PCB supplier as a .zip file.
 
 # The ATtiny Firmware
 The firmware for the ATtiny85 is here:
