@@ -65,7 +65,7 @@ The Schottky Diode position on the board is marked D1 and has a vertical line on
 
 ![Schottky Diode](https://github.com/Peterkn2001/ATtiny-Programmer/blob/main/images/Schottky_Diode.jpg)
 
-The ATtiny Firmware
+# The ATtiny Firmware
 The firmware for the ATtiny85 is here:
 
 https://github.com/Peterkn2001/Wemos-D1-Mini-Hardware-Watchdog/blob/main/ATtiny-Firmware/Hardware_Watchdog_v1_5.ino
