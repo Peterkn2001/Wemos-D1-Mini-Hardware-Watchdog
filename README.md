@@ -41,10 +41,10 @@ These same connectors can be used with the hardware watchdog board, to allow it 
 or plugged directly into one of the sockets on a Wemos double or triple base.
 
 ### Reducing the component count
-The LED and associated 1k resistor are primarily there to indicate to the user that a heartbeat signal has been received from the Wemos.
+The LED and associated 1k resistor are primarily there to indicate to the user that a heartbeat signal has been received from the Wemos.  
 I generally tend to flash the Wemos's onboard LED when a heartbeat signal has been sent, so both LEDs should flash in unison.
 The LED on the watchdog board is also used to indicate when the watchdog is in its start-up delay phase, by lighting the LED constantly during this period.
-I'd recommend having this LED, and its associated 1k resistor, in place when you first start experimenting with the hardware watchdog.
+I'd recommend having this LED, and its associated 1k resistor, in place when you first start experimenting with the hardware watchdog.     
 However, once you've become familiar with using the hardware watchdog the LED and 1k resistor can safely be omitted if required.
 
 ## Mounting the ATtiny85 processor
