@@ -31,8 +31,8 @@ const unsigned long heartbeat_timeout_delay_2 = (1000 * 15);  // 15 second heart
 // and used alongside a Wemos D1 mini or D1 Mini Pro.
 
 // The Watchdog LED will be lit during the initial_delay priod then will flash when
-// a heartbeat pulse is recieved from the Wemos. If the initial_delay has passed
-// and no heartbeat pulse is recieved from the Wemos for more than the period of the
+// a heartbeat pulse is received from the Wemos. If the initial_delay has passed
+// and no heartbeat pulse is received from the Wemos for more than the period of the
 // heartbeat_timeout then the Wemos D1 Mini/Pro (along with the Watchdog circuit) will be rebooted.
 //
 // On startup and after a reset, initial_delay is invoked to insure the Wemos has time to
@@ -40,7 +40,7 @@ const unsigned long heartbeat_timeout_delay_2 = (1000 * 15);  // 15 second heart
 // If no hearbeat pulse is recieved from the Wemos after startup then the Wemos will be rebooted after the
 // initial_delay and the heartbeat_timeout combined have passed
 
-// NOTE - The Wemos and ATtiny Reset pins are tied together, so resetting the Wemos via the biult-in
+// NOTE - The Wemos and ATtiny Reset pins are tied together, so resetting the Wemos via the built-in
 // reset button also reboots the Watchdog Timer.
 
 
@@ -50,9 +50,9 @@ const unsigned long heartbeat_timeout_delay_2 = (1000 * 15);  // 15 second heart
 // ATting85 GPIO's (PB's) For Info Only...
 // 0  initial_delay selector      Pull to GND via solder pad to enable initial_delay_2
 // 1  heartbeat_timeout selector  Pull to GND via solder pad to enable heartbeat_timeout_delay_2
-// 2  heartbeat_pin               Conencted to D1, D2, D5, D6 or D7 via solder pads. Only one set of solder pads should be bridged
+// 2  heartbeat_pin               Connected to D1, D2, D5, D6 or D7 via solder pads. Only one set of solder pads should be bridged
 // 3  reset_signal                Pin that is pulled LOW to reset the Wemos and the Watchdog Timer
-// 4  led_pin                     Pin that has the LED attached to indicate initial_delay period (on) and heartbeat recieved (flashes on)
+// 4  led_pin                     Pin that has the LED attached to indicate initial_delay period (on) and heartbeat received (flashes on)
 
 
 unsigned long initial_delay;
@@ -174,7 +174,7 @@ void loop()
 
 void ledHeartbeat(void) 
 {
-  // Pulse the LED to show that a heartbeat has been recieved
+  // Pulse the LED to show that a heartbeat has been received
   digitalWrite(led_pin, currState = digitalRead(heartbeat_pin));
   if ( currState != prevState) 
   { // State has changed
@@ -200,7 +200,7 @@ void resetHost(int reset_signal)
   digitalWrite(reset_signal, HIGH); // Turn it back on so the host can boot!
   initialWaitTimer.reset(); // Zero out the timers
   heartbeat_timeout.reset();
-  digitalWrite(led_pin, HIGH); // Turn the LED back on again to indicate taht we are in initial_delay
+  digitalWrite(led_pin, HIGH); // Turn the LED back on again to indicate that we are in initial_delay
 }
 
 
